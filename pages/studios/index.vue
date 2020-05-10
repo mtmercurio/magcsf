@@ -1,9 +1,16 @@
 <template>
   <div class="container">
     <div class="columns is-multiline">
-      <div v-for="item in items" :key="item.title" class="column">
-        <figure class="image is-square">
-          <img src="~assets/studios/kairi/main.jpg">
+      <div v-for="(studio, index) in studios" :key="index" class="column">
+        <figure
+          class="image"
+          @mouseover="hover = index"
+          @mouseleave="hover = null"
+        >
+          <img :src="studio.fields.mainPicture.fields.file.url" :alt="studio.fields.title">
+          <div v-if="hover === index" class="overlay">
+            {{ studio.fields.title }}
+          </div>
         </figure>
       </div>
     </div>
@@ -11,152 +18,52 @@
 </template>
 
 <script>
+import { createClient } from '~/plugins/contentful.js'
+
+const client = createClient()
+
 export default {
-  name: 'Studio',
+  name: 'Studios',
+  // `env` is available in the context object
+  asyncData () {
+    return Promise.all([
+      // fetch all studio posts sorted by creation date
+      client.getEntries({
+        content_type: 'studio',
+        order: '-sys.createdAt'
+      })
+    ]).then(([studios]) => {
+      // return data that should be available
+      // in the template
+      return {
+        studios: studios.items
+      }
+      // eslint-disable-next-line no-console
+    }).catch(console.error)
+  },
   data () {
     return {
-      items: [
-        {
-          title: 'Kairi1',
-          main: '~assets/studios/kairi/main.jpg',
-          pics: [
-            '~assets/studios/kairi/main.jpg',
-            '~assets/studios/kairi/rtrr.jpg',
-            '~assets/studios/kairi/panels.jpg',
-            '~assets/studios/kairi/back.jpg',
-            '~assets/studios/kairi/frontceiling.jpg',
-            '~assets/studios/kairi/frnt.jpg',
-            '~assets/studios/kairi/boothcloud.jpg',
-            '~assets/studios/kairi/framing2.jpg'
-          ]
-        },
-        {
-          title: 'Troy Taylor1',
-          main: '~assets/studios/troy_taylor/crfront.jpg',
-          pics: [
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/ceiling2.jpg',
-            '~assets/studios/troy_taylor/crback.jpg',
-            '~assets/studios/troy_taylor/crfrnt2.jpg',
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/studioside.jpg',
-            '~assets/studios/troy_taylor/unfnshdkthn1.jpg'
-          ]
-        },
-        {
-          title: 'Kairi2',
-          main: '~assets/studios/kairi/main.jpg',
-          pics: [
-            '~assets/studios/kairi/main.jpg',
-            '~assets/studios/kairi/rtrr.jpg',
-            '~assets/studios/kairi/panels.jpg',
-            '~assets/studios/kairi/back.jpg',
-            '~assets/studios/kairi/frontceiling.jpg',
-            '~assets/studios/kairi/frnt.jpg',
-            '~assets/studios/kairi/boothcloud.jpg',
-            '~assets/studios/kairi/framing2.jpg'
-          ]
-        },
-        {
-          title: 'Troy Taylor2',
-          main: '~assets/studios/troy_taylor/crfront.jpg',
-          pics: [
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/ceiling2.jpg',
-            '~assets/studios/troy_taylor/crback.jpg',
-            '~assets/studios/troy_taylor/crfrnt2.jpg',
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/studioside.jpg',
-            '~assets/studios/troy_taylor/unfnshdkthn1.jpg'
-          ]
-        },
-        {
-          title: 'Kairi3',
-          main: '~assets/studios/kairi/main.jpg',
-          pics: [
-            '~assets/studios/kairi/main.jpg',
-            '~assets/studios/kairi/rtrr.jpg',
-            '~assets/studios/kairi/panels.jpg',
-            '~assets/studios/kairi/back.jpg',
-            '~assets/studios/kairi/frontceiling.jpg',
-            '~assets/studios/kairi/frnt.jpg',
-            '~assets/studios/kairi/boothcloud.jpg',
-            '~assets/studios/kairi/framing2.jpg'
-          ]
-        },
-        {
-          title: 'Troy Taylor3',
-          main: '~assets/studios/troy_taylor/crfront.jpg',
-          pics: [
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/ceiling2.jpg',
-            '~assets/studios/troy_taylor/crback.jpg',
-            '~assets/studios/troy_taylor/crfrnt2.jpg',
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/studioside.jpg',
-            '~assets/studios/troy_taylor/unfnshdkthn1.jpg'
-          ]
-        },
-        {
-          title: 'Kairi4',
-          main: '~assets/studios/kairi/main.jpg',
-          pics: [
-            '~assets/studios/kairi/main.jpg',
-            '~assets/studios/kairi/rtrr.jpg',
-            '~assets/studios/kairi/panels.jpg',
-            '~assets/studios/kairi/back.jpg',
-            '~assets/studios/kairi/frontceiling.jpg',
-            '~assets/studios/kairi/frnt.jpg',
-            '~assets/studios/kairi/boothcloud.jpg',
-            '~assets/studios/kairi/framing2.jpg'
-          ]
-        },
-        {
-          title: 'Troy Taylor4',
-          main: '~assets/studios/troy_taylor/crfront.jpg',
-          pics: [
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/ceiling2.jpg',
-            '~assets/studios/troy_taylor/crback.jpg',
-            '~assets/studios/troy_taylor/crfrnt2.jpg',
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/studioside.jpg',
-            '~assets/studios/troy_taylor/unfnshdkthn1.jpg'
-          ]
-        },
-        {
-          title: 'Kairi5',
-          main: '~assets/studios/kairi/main.jpg',
-          pics: [
-            '~assets/studios/kairi/main.jpg',
-            '~assets/studios/kairi/rtrr.jpg',
-            '~assets/studios/kairi/panels.jpg',
-            '~assets/studios/kairi/back.jpg',
-            '~assets/studios/kairi/frontceiling.jpg',
-            '~assets/studios/kairi/frnt.jpg',
-            '~assets/studios/kairi/boothcloud.jpg',
-            '~assets/studios/kairi/framing2.jpg'
-          ]
-        },
-        {
-          title: 'Troy Taylor5',
-          main: '~assets/studios/troy_taylor/crfront.jpg',
-          pics: [
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/ceiling2.jpg',
-            '~assets/studios/troy_taylor/crback.jpg',
-            '~assets/studios/troy_taylor/crfrnt2.jpg',
-            '~assets/studios/troy_taylor/crfront.jpg',
-            '~assets/studios/troy_taylor/studioside.jpg',
-            '~assets/studios/troy_taylor/unfnshdkthn1.jpg'
-          ]
-        }
-      ]
+      hover: null
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
+
+  /* The overlay effect - lays on top of the container and over the image */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity: 1;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
 
 </style>
