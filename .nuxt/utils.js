@@ -149,7 +149,7 @@ export async function setContext (app, context) {
 
       payload: context.payload,
       error: context.error,
-      base: '/<repository-name>/',
+      base: '/magcsf/',
       env: {"CTF_SPACE_ID":"dvwb1rs9t5zr","CTF_CDA_ACCESS_TOKEN":"uun9bv5l3mWsGAqBxsNiKsLYs5mm9aHVoGtzY834OgY","CTF_ENVIRONMENT":"master"}
     }
     // Only set once
