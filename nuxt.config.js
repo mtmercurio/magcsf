@@ -2,7 +2,7 @@ import config from './.contentful.json'
 
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/<repository-name>/'
+    base: '/magcsf/'
   }
 } : {}
 
