@@ -1,11 +1,5 @@
 import config from './.contentful.json'
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/magcsf/'
-  }
-} : {}
-
 export default {
   mode: 'universal',
   /*
@@ -65,5 +59,7 @@ export default {
     CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
     CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
-  ...routerBase
+  router: {
+    base: '/magcsf/'
+  }
 }
