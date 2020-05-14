@@ -1,17 +1,19 @@
 <template>
   <div class="container">
     <div class="columns is-multiline">
-      <div v-for="(studio, index) in studios" :key="index" class="column">
-        <figure
-          class="image"
-          @mouseover="hover = index"
-          @mouseleave="hover = null"
-        >
-          <img :src="studio.fields.mainPicture.fields.file.url" :alt="studio.fields.title">
-          <div v-if="hover === index" class="overlay">
-            {{ studio.fields.title }}
-          </div>
-        </figure>
+      <div v-for="(studio, index) in studios" :key="index" class="column is-one-quarter">
+        <nuxt-link :to="'/studios/' + studio.sys.id">
+          <figure
+            class="image"
+            @mouseover="hover = index"
+            @mouseleave="hover = null"
+          >
+            <img :src="studio.fields.mainPhoto.fields.file.url" :alt="studio.fields.title">
+            <div v-if="hover === index" class="overlay">
+              {{ studio.fields.title }}
+            </div>
+          </figure>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -29,7 +31,8 @@ export default {
     return Promise.all([
       // fetch all studio posts sorted by creation date
       client.getEntries({
-        content_type: 'studio',
+        content_type: 'product',
+        'fields.type[all]': 'studio',
         order: '-sys.createdAt'
       })
     ]).then(([studios]) => {
