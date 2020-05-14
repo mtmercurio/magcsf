@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="columns is-multiline">
-      <div v-for="(studio, index) in studios" :key="index" class="column is-one-quarter">
+      <div v-for="(studio, index) in studios" :key="index" class="column is-one-third">
         <nuxt-link :to="'/studios/' + studio.sys.id">
           <figure
             class="image"
