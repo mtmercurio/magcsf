@@ -13,6 +13,9 @@
         <b-navbar-item tag="nuxt-link" :to="{ path: '/studios' }">
           Studios
         </b-navbar-item>
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }">
+          Theaters
+        </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/acoustics' }">
           Acoustics
         </b-navbar-item>
@@ -61,11 +64,6 @@ export default {
           title: 'Home',
           icon: 'home',
           to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
         }
       ]
     }
