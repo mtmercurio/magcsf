@@ -28,10 +28,7 @@
         <b-navbar-item tag="div">
           <div class="buttons">
             <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
+              <strong>Contact Us</strong>
             </a>
           </div>
         </b-navbar-item>
