@@ -55,7 +55,7 @@
             FURNITURE
           </h1>
           <h2 class="subtitle">
-            Built with you in mind
+            Built to your needs
           </h2>
         </div>
       </div>
