@@ -41,12 +41,16 @@
       </div>
     </section>
     <footer class="footer">
-      <div class="content has-text-left">
-        <h2 class="title is-3 is-spaced">
-          MAG Custom Studio Furniture
-        </h2>
-        <p>(770) 378-2866</p>
-        <p>mike@magcsf.com</p>
+      <div class="columns is-vcentered">
+        <div class="column is-narrow">
+          <figure class="image is-128x128">
+            <img src="~assets/MAG.png">
+          </figure>
+        </div>
+        <div class="column">
+          <p>(770) 378-2866</p>
+          <p>mike@magcsf.com</p>
+        </div>
       </div>
     </footer>
   </div>
