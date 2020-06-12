@@ -4,9 +4,12 @@
       <template slot="brand">
         <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
           <img
-            src="~assets/MAG_logo.png"
+            src="~assets/MAG.png"
             alt="MAG Custom Studio Furniture"
           >
+          <h1 class="MAG-font title is-4">
+            MAG CUSTOM
+          </h1>
         </b-navbar-item>
       </template>
       <template slot="start">
