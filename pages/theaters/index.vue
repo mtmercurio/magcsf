@@ -1,22 +1,24 @@
 <template>
-  <div class="container">
-    <div class="columns is-multiline">
-      <div v-for="(theater, index) in theaters" :key="index" class="column is-one-third">
-        <nuxt-link :to="'/theaters/' + theater.sys.id">
-          <figure
-            class="image"
-            @mouseover="hover = index"
-            @mouseleave="hover = null"
-          >
-            <img :src="theater.fields.mainPhoto.fields.file.url" :alt="theater.fields.title">
-            <div v-if="hover === index" class="overlay">
-              {{ theater.fields.title }}
-            </div>
-          </figure>
-        </nuxt-link>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div v-for="(theater, index) in theaters" :key="index" class="column is-one-third">
+          <nuxt-link :to="'/theaters/' + theater.sys.id">
+            <figure
+              class="image"
+              @mouseover="hover = index"
+              @mouseleave="hover = null"
+            >
+              <img :src="theater.fields.mainPhoto.fields.file.url" :alt="theater.fields.title">
+              <div v-if="hover === index" class="overlay">
+                {{ theater.fields.title }}
+              </div>
+            </figure>
+          </nuxt-link>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

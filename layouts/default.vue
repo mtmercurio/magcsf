@@ -30,6 +30,9 @@
             <a class="button is-primary">
               <strong>Contact Us</strong>
             </a>
+            <a class="button is-light">
+              About Us
+            </a>
           </div>
         </b-navbar-item>
       </template>

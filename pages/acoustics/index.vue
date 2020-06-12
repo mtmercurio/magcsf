@@ -1,22 +1,24 @@
 <template>
-  <div class="container">
-    <div class="columns is-multiline">
-      <div v-for="(acoustic, index) in acoustics" :key="index" class="column is-one-third">
-        <nuxt-link :to="'/acoustics/' + acoustic.sys.id">
-          <figure
-            class="image"
-            @mouseover="hover = index"
-            @mouseleave="hover = null"
-          >
-            <img :src="acoustic.fields.mainPhoto.fields.file.url" :alt="acoustic.fields.title">
-            <div v-if="hover === index" class="overlay">
-              {{ acoustic.fields.title }}
-            </div>
-          </figure>
-        </nuxt-link>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div v-for="(acoustic, index) in acoustics" :key="index" class="column is-one-third">
+          <nuxt-link :to="'/acoustics/' + acoustic.sys.id">
+            <figure
+              class="image"
+              @mouseover="hover = index"
+              @mouseleave="hover = null"
+            >
+              <img :src="acoustic.fields.mainPhoto.fields.file.url" :alt="acoustic.fields.title">
+              <div v-if="hover === index" class="overlay">
+                {{ acoustic.fields.title }}
+              </div>
+            </figure>
+          </nuxt-link>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

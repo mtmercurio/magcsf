@@ -1,22 +1,24 @@
 <template>
-  <div class="container">
-    <div class="columns is-multiline">
-      <div v-for="(furniture, index) in furniture" :key="index" class="column is-one-third">
-        <nuxt-link :to="'/furniture/' + furniture.sys.id">
-          <figure
-            class="image"
-            @mouseover="hover = index"
-            @mouseleave="hover = null"
-          >
-            <img :src="furniture.fields.mainPhoto.fields.file.url" :alt="furniture.fields.title">
-            <div v-if="hover === index" class="overlay">
-              {{ furniture.fields.title }}
-            </div>
-          </figure>
-        </nuxt-link>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div v-for="(furniture, index) in furniture" :key="index" class="column is-one-third">
+          <nuxt-link :to="'/furniture/' + furniture.sys.id">
+            <figure
+              class="image"
+              @mouseover="hover = index"
+              @mouseleave="hover = null"
+            >
+              <img :src="furniture.fields.mainPhoto.fields.file.url" :alt="furniture.fields.title">
+              <div v-if="hover === index" class="overlay">
+                {{ furniture.fields.title }}
+              </div>
+            </figure>
+          </nuxt-link>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
