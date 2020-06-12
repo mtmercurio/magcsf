@@ -1,23 +1,28 @@
 <template>
-  <div v-if="theater" class="container">
-    <b-carousel :autoplay="false" :indicator-inside="false">
-      <b-carousel-item v-for="(photo, i) in theater.fields.photos" :key="i">
-        <span class="image">
-          <img :src="photo.fields.file.url">
-        </span>
-      </b-carousel-item>
-      <template slot="indicators" slot-scope="props">
-        <span>
-          <img :src="getImgUrl(props.i)" :title="props.i">
-        </span>
-      </template>
-    </b-carousel>
-    <section class="section">
-      <p class="content is-large">
-        {{ theater.fields.description }}
-      </p>
-    </section>
-  </div>
+  <section class="section">
+    <div v-if="theater" class="container">
+      <b-carousel :autoplay="false" :indicator-inside="false">
+        <b-carousel-item v-for="(photo, i) in theater.fields.photos" :key="i">
+          <span class="image">
+            <img :src="photo.fields.file.url">
+          </span>
+        </b-carousel-item>
+        <template slot="indicators" slot-scope="props">
+          <span>
+            <img :src="getImgUrl(props.i)" :title="props.i">
+          </span>
+        </template>
+      </b-carousel>
+      <div class="content is-medium">
+        <h1>
+          {{ theater.fields.title }}
+        </h1>
+        <p>
+          {{ theater.fields.description }}
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

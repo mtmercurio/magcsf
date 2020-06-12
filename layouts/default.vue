@@ -10,19 +10,19 @@
         </b-navbar-item>
       </template>
       <template slot="start">
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/furniture' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/furniture' }" class="MAG-font">
           Furniture
         </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/acoustics' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/acoustics' }" class="MAG-font">
           Acoustics
         </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/studios' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/studios' }" class="MAG-font">
           Studios
         </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }" class="MAG-font">
           Theaters
         </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/about' }">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/about' }" class="MAG-font">
           About Us
         </b-navbar-item>
       </template>
@@ -30,7 +30,7 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <nuxt-link :to="{ path: '/contact-us' }" class="button is-primary">
+            <nuxt-link :to="{ path: '/contact-us' }" class="button is-primary MAG-font">
               <strong>Contact Us</strong>
             </nuxt-link>
           </div>

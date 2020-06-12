@@ -1,23 +1,28 @@
 <template>
-  <div v-if="furniture" class="container">
-    <b-carousel :autoplay="false" :indicator-inside="false">
-      <b-carousel-item v-for="(photo, i) in furniture.fields.photos" :key="i">
-        <span class="image">
-          <img :src="photo.fields.file.url">
-        </span>
-      </b-carousel-item>
-      <template slot="indicators" slot-scope="props">
-        <span>
-          <img :src="getImgUrl(props.i)" :title="props.i">
-        </span>
-      </template>
-    </b-carousel>
-    <section class="section">
-      <p class="content is-large">
-        {{ furniture.fields.description }}
-      </p>
-    </section>
-  </div>
+  <section class="section">
+    <div v-if="furniture" class="container">
+      <b-carousel :autoplay="false" :indicator-inside="false">
+        <b-carousel-item v-for="(photo, i) in furniture.fields.photos" :key="i">
+          <span class="image">
+            <img :src="photo.fields.file.url">
+          </span>
+        </b-carousel-item>
+        <template slot="indicators" slot-scope="props">
+          <span>
+            <img :src="getImgUrl(props.i)" :title="props.i">
+          </span>
+        </template>
+      </b-carousel>
+      <div class="content is-medium">
+        <h1>
+          {{ furniture.fields.title }}
+        </h1>
+        <p>
+          {{ furniture.fields.description }}
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

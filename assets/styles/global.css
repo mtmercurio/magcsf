@@ -1,0 +1,12 @@
+@font-face {
+  font-family: MAG;
+  src: url("~assets/fonts/NasalizationRg-Regular.ttf");
+}
+
+h1 {
+  font-family: MAG, serif;
+}
+
+.MAG-font {
+  font-family: MAG, serif;
+}
