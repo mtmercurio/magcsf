@@ -22,17 +22,17 @@
         <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }">
           Theaters
         </b-navbar-item>
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/about' }">
+          About Us
+        </b-navbar-item>
       </template>
 
       <template slot="end">
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/contact-us' }">
+        <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary">
+            <nuxt-link :to="{ path: '/contact-us' }" class="button is-primary">
               <strong>Contact Us</strong>
-            </a>
-            <a class="button is-light">
-              About Us
-            </a>
+            </nuxt-link>
           </div>
         </b-navbar-item>
       </template>

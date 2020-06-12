@@ -2,7 +2,7 @@
   <div>
     <nuxt-link to="/furniture">
       <figure class="image is-16by9">
-        <img :src="frontPagePictures.fields.main.fields.file.url" alt="main">
+        <img :src="frontPagePictures.main.fields.file.url" alt="main">
       </figure>
       <section class="hero is-light">
         <div class="hero-body">
@@ -18,21 +18,21 @@
       <div class="column is-one-third">
         <nuxt-link to="/acoustics">
           <figure class="image is-16by9">
-            <img :src="frontPagePictures.fields.acoustics.fields.file.url" alt="acoustics">
+            <img :src="frontPagePictures.acoustics.fields.file.url" alt="acoustics">
           </figure>
         </nuxt-link>
       </div>
       <div class="column is-one-third">
         <nuxt-link to="/studios">
           <figure class="image is-16by9">
-            <img :src="frontPagePictures.fields.studios.fields.file.url" alt="studios">
+            <img :src="frontPagePictures.studios.fields.file.url" alt="studios">
           </figure>
         </nuxt-link>
       </div>
       <div class="column is-one-third">
         <nuxt-link to="/theaters">
           <figure class="image is-16by9">
-            <img :src="frontPagePictures.fields.theaters.fields.file.url" alt="theaters">
+            <img :src="frontPagePictures.theaters.fields.file.url" alt="theaters">
           </figure>
         </nuxt-link>
       </div>
@@ -59,7 +59,7 @@ export default {
       // return data that should be available
       // in the template
       return {
-        frontPagePictures: frontPage.items[0]
+        frontPagePictures: frontPage.items[0].fields
       }
       // eslint-disable-next-line no-console
     }).catch(console.error)
