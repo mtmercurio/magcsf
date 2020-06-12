@@ -10,17 +10,17 @@
         </b-navbar-item>
       </template>
       <template slot="start">
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/furniture' }">
+          Furniture
+        </b-navbar-item>
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/acoustics' }">
+          Acoustics
+        </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/studios' }">
           Studios
         </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }">
           Theaters
-        </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/acoustics' }">
-          Acoustics
-        </b-navbar-item>
-        <b-navbar-item tag="nuxt-link" :to="{ path: '/furniture' }">
-          Furniture
         </b-navbar-item>
       </template>
 

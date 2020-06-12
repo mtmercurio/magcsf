@@ -12,11 +12,11 @@
         </span>
       </template>
     </b-carousel>
-    <div>
-      <p>
+    <section class="section">
+      <p class="content is-large">
         {{ studio.fields.description }}
       </p>
-    </div>
+    </section>
   </div>
 </template>
 
