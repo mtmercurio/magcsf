@@ -9,12 +9,6 @@
           We're available 9am-8pm Mon-Sun
         </p>
         <h2 class="title is-3">
-          Warehouse Address
-        </h2>
-        <p>
-          4756 Hammermill Rd Tucker, GA 30084
-        </p>
-        <h2 class="title is-3">
           Phone
         </h2>
         <p>
@@ -29,6 +23,12 @@
           <a href="mailto:mike@magcsf.com">
             sales@magcsf.com
           </a>
+        </p>
+        <h2 class="title is-3">
+          Warehouse Address
+        </h2>
+        <p>
+          4756 Hammermill Rd Tucker, GA 30084
         </p>
       </div>
     </div>
