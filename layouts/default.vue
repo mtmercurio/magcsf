@@ -3,10 +3,6 @@
     <b-navbar :fixed-top="true" :wrapper-class="'container'">
       <template slot="brand">
         <b-navbar-item tag="nuxt-link" :to="{ path: '/' }">
-          <img
-            src="~assets/MAG.png"
-            alt="MAG Custom Studio Furniture"
-          >
           <h1 class="MAG-font title is-4">
             MAG CUSTOM
           </h1>
@@ -24,6 +20,9 @@
         </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/theaters' }" class="MAG-font">
           Theaters
+        </b-navbar-item>
+        <b-navbar-item tag="nuxt-link" :to="{ path: '/podcasts' }" class="MAG-font">
+          Podcasts
         </b-navbar-item>
         <b-navbar-item tag="nuxt-link" :to="{ path: '/about' }" class="MAG-font">
           About Us
