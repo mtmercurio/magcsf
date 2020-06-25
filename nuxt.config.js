@@ -61,6 +61,6 @@ export default {
     CTF_ENVIRONMENT: config.CTF_ENVIRONMENT
   },
   router: {
-    base: '/magcsf/'
+    base: '/'
   }
 }
