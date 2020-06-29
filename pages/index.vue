@@ -3,62 +3,61 @@
     <nuxt-link to="/furniture">
       <figure class="image is-16by9">
         <img :src="frontPagePictures.main.fields.file.url" alt="main">
+        <div class="level">
+          <div class="level-item is-overlay">
+            <h1 class="title is-1 title-color">
+              Furniture
+            </h1>
+          </div>
+        </div>
       </figure>
     </nuxt-link>
     <nuxt-link to="/acoustics">
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
+      <figure class="image is-16by9">
+        <img :src="frontPagePictures.acoustics.fields.file.url" alt="acoustics">
+        <div class="level">
+          <div class="level-item is-overlay">
+            <h1 class="title is-1 title-color">
               Acoustics
             </h1>
           </div>
         </div>
-      </section>
-      <figure class="image is-16by9">
-        <img :src="frontPagePictures.acoustics.fields.file.url" alt="acoustics">
       </figure>
     </nuxt-link>
     <nuxt-link to="/studios">
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
+      <figure class="image is-16by9">
+        <img :src="frontPagePictures.studios.fields.file.url" alt="studios">
+        <div class="level">
+          <div class="level-item is-overlay">
+            <h1 class="title is-1 title-color">
               Studios
             </h1>
           </div>
         </div>
-      </section>
-      <figure class="image is-16by9">
-        <img :src="frontPagePictures.studios.fields.file.url" alt="studios">
       </figure>
     </nuxt-link>
     <nuxt-link to="/theaters">
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
+      <figure class="image is-16by9">
+        <img :src="frontPagePictures.theaters.fields.file.url" alt="theaters">
+        <div class="level">
+          <div class="level-item is-overlay">
+            <h1 class="title is-1 title-color">
               Theaters
             </h1>
           </div>
         </div>
-      </section>
-      <figure class="image is-16by9">
-        <img :src="frontPagePictures.theaters.fields.file.url" alt="theaters">
       </figure>
     </nuxt-link>
     <nuxt-link to="/podcasts">
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
+      <figure class="image is-16by9">
+        <img :src="frontPagePictures.podcasts.fields.file.url" alt="podcasts">
+        <div class="level">
+          <div class="level-item is-overlay">
+            <h1 class="title is-1 title-color">
               Podcasts
             </h1>
           </div>
         </div>
-      </section>
-      <figure class="image is-16by9">
-        <img :src="frontPagePictures.podcasts.fields.file.url" alt="theaters">
       </figure>
     </nuxt-link>
     <section class="hero is-light">
@@ -105,4 +104,9 @@ export default {
 </script>
 
 <style>
+
+  .title-color {
+    color: snow;
+  }
+
 </style>
